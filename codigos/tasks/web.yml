@@ -1,0 +1,7 @@
+- name: Install Apache
+  apt: name=apache2 state=absent
+
+- name: Install PHP
+  apt: name={{ item }} state=absent
+    - php5
+    - libapache2-mod-php5

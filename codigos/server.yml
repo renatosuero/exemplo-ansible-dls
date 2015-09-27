@@ -1,0 +1,28 @@
+---
+- hosts: all
+  vars:
+    #timezone: America/Sao_Paulo
+    #- ag_timezone: Etc/UTC
+    #roles:
+    #- { role: adriagalin.timezone }
+    #vars_prompt:
+    #- name: "file"
+    #  prompt: "Digite o nome do arquivo"
+    #  private: no
+  handlers:
+    - include: handlers/fail2ban.yml
+  tasks:
+    #- include: tasks/commom.yml
+    - include: tasks/security.yml
+
+    #- name: Criando arquivo teste
+    #copy: src=files/teste.txt dest=/home/renato/{{ file }}.txt
+
+    #- name: Configurando o Timezone
+    #  template: src=templates/timezone.j2 dest=/etc/timezone
+    #  register: timezone_alterado
+
+    #- name: Reconfigurando o Timezone
+    #  command: dpkg-reconfigure -f noninteractive tzdata
+    #  when: timezone_alterado.changed
+
